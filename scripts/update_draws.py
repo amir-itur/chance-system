@@ -73,120 +73,68 @@ def _write_debug_log(log_lines):
 
 def extract_draws_from_page(page, log):
     """
-    Multi-strategy extraction, most-specific first, falling back to a
-    content-based regex scan that doesn't depend on any particular DOM
-    structure at all. Every strategy logs what it tried and found, so a
-    failed run leaves a clear trail instead of a bare "0 rows".
+    Targeted extraction against the REAL page structure, confirmed from the
+    debug artifact of the failed run (see chat): the archive page already
+    shows the latest ~50 draws by default, NO search click needed. Each
+    draw is one <li class="archive_list_item ..."> containing:
+      - a[aria-vod="<draw_id>"]                      <- draw number, reliable
+      - .archive_list_block.date  -> a DD/MM/YY div + a HH:MM div
+      - .archive_list_block.card  -> 4x .cat_data_info, each with
+            img[alt="תלתן"|"יהלום"|"לב"|"עלה"] (suit) + a sibling div (value)
+    This replaces the earlier generic table/text-window heuristics, which
+    both missed real data because the page uses <li>/<div>, not <table>.
     """
     import re
-
     log(f"page title: {page.title()!r}")
 
-    # The archive page is a search form (date-range / draw-number-range) -
-    # on a bare page load it may show NO rows until a search is triggered.
-    # Try common "search" trigger patterns before giving up.
-    search_triggered = False
-    for sel in [
-        "text=חפש", "button:has-text('חפש')", "input[type=submit]",
-        "input[value*='חפש']", "a:has-text('חפש')",
-    ]:
+    items = page.query_selector_all("li.archive_list_item")
+    log(f"found {len(items)} li.archive_list_item elements")
+    if not items:
+        return []
+
+    suit_map = {"תלתן": "clubs", "יהלום": "diamonds", "לב": "hearts", "עלה": "spades"}
+    date_re = re.compile(r"\d{1,2}/\d{1,2}/\d{2,4}")
+    time_re = re.compile(r"\d{1,2}:\d{2}")
+
+    results = []
+    for item in items:
         try:
-            el = page.query_selector(sel)
-            if el:
-                log(f"found search control via selector {sel!r} - clicking it")
-                el.click()
-                page.wait_for_load_state("networkidle", timeout=20000)
-                page.wait_for_timeout(1500)
-                search_triggered = True
-                break
+            video_link = item.query_selector("a[aria-vod]")
+            draw_id = int(video_link.get_attribute("aria-vod")) if video_link else None
+
+            date_val, time_val = None, None
+            date_block = item.query_selector(".archive_list_block.date")
+            if date_block:
+                text = date_block.inner_text()
+                m_date = date_re.search(text)
+                m_time = time_re.search(text)
+                date_val = m_date.group(0) if m_date else None
+                time_val = m_time.group(0) if m_time else None
+
+            cards = {}
+            card_block = item.query_selector(".archive_list_block.card")
+            if card_block:
+                for info in card_block.query_selector_all(".cat_data_info"):
+                    img = info.query_selector("img")
+                    suit_key = suit_map.get(img.get_attribute("alt")) if img else None
+                    value = None
+                    for d in info.query_selector_all("div"):
+                        t = d.inner_text().strip()
+                        if t.upper() in VALID_VALUES:
+                            value = t.upper()
+                            break
+                    if suit_key and value:
+                        cards[suit_key] = value
+
+            if draw_id and date_val and len(cards) == 4:
+                results.append({"draw_id": draw_id, "date": date_val, "time": time_val, **cards})
+            else:
+                log(f"  skipped one li: draw_id={draw_id} date={date_val} cards_found={len(cards)}/4")
         except Exception as e:
-            log(f"selector {sel!r} click attempt failed: {e}")
-    if not search_triggered:
-        log("no search control matched - proceeding with whatever loaded on initial navigation")
+            log(f"  error parsing one li: {e}")
 
-    n_tables = len(page.query_selector_all("table"))
-    n_trs = len(page.query_selector_all("tr"))
-    log(f"found {n_tables} <table> elements, {n_trs} <tr> elements after settle")
-
-    # ---- Strategy A: generic table-row scan ----
-    results = _extract_via_table_rows(page, log)
-    if results:
-        log(f"strategy A (table rows) succeeded: {len(results)} draws")
-        return results
-    log("strategy A (table rows) found nothing - trying strategy B")
-
-    # ---- Strategy B: content-based regex scan over the full rendered text ----
-    # Works regardless of whether the results are in a <table>, a <div> grid,
-    # or anything else - it just looks for the TEXT PATTERN of a draw record:
-    # a 4-5 digit draw number, a DD/MM/YYYY date, and 4 card-value tokens,
-    # all within a short window of each other in reading order.
-    full_text = page.inner_text("body")
-    results = _extract_via_text_pattern(full_text, log)
-    if results:
-        log(f"strategy B (text pattern) succeeded: {len(results)} draws")
-        return results
-    log("strategy B (text pattern) also found nothing")
-
-    return []
-
-
-def _extract_via_table_rows(page, log):
-    rows = page.query_selector_all("table tr")
-    results = []
-    for row in rows:
-        cells = [c.inner_text().strip() for c in row.query_selector_all("td")]
-        if len(cells) < 5:
-            continue
-        draw_id = None
-        for c in cells:
-            if c.isdigit() and 3 <= len(c) <= 6:
-                draw_id = int(c)
-                break
-        card_cells = [c for c in cells if c.upper() in VALID_VALUES]
-        if draw_id is not None and len(card_cells) >= 4:
-            date_cell = next((c for c in cells if "/" in c), None)
-            results.append({
-                "draw_id": draw_id, "date": date_cell, "time": None,
-                "clubs": card_cells[0], "diamonds": card_cells[1],
-                "hearts": card_cells[2], "spades": card_cells[3],
-            })
-    log(f"  table-row scan: {len(rows)} <tr> examined, {len(results)} parsed as draw records")
+    log(f"parsed {len(results)}/{len(items)} list items into draw records")
     return results
-
-
-def _extract_via_text_pattern(full_text, log):
-    import re
-    # tokenize the whole page text, keep order
-    tokens = full_text.split()
-    date_re = re.compile(r"^\d{1,2}/\d{1,2}/\d{2,4}$")
-    id_re = re.compile(r"^\d{3,6}$")
-    results = []
-    i = 0
-    while i < len(tokens):
-        tok = tokens[i]
-        if id_re.match(tok) or date_re.match(tok):
-            window = tokens[i:i+12]  # look ahead a small window for the rest of the record
-            draw_id = next((int(t) for t in window if id_re.match(t)), None)
-            date_val = next((t for t in window if date_re.match(t)), None)
-            card_vals = [t.upper() for t in window if t.upper() in VALID_VALUES]
-            if draw_id is not None and date_val is not None and len(card_vals) >= 4:
-                results.append({
-                    "draw_id": draw_id, "date": date_val, "time": None,
-                    "clubs": card_vals[0], "diamonds": card_vals[1],
-                    "hearts": card_vals[2], "spades": card_vals[3],
-                })
-                i += 12
-                continue
-        i += 1
-    # de-duplicate by draw_id (the sliding window can catch the same record twice)
-    seen = set()
-    deduped = []
-    for r in results:
-        if r["draw_id"] not in seen:
-            seen.add(r["draw_id"])
-            deduped.append(r)
-    log(f"  text-pattern scan: {len(tokens)} tokens scanned, {len(deduped)} unique draw records parsed")
-    return deduped
 
 
 def main():
