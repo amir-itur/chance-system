@@ -1,0 +1,38 @@
+name: Update Chance draws
+
+on:
+  schedule:
+    # Runs every hour, 06:00-22:00 UTC (covers Israel draw hours with margin
+    # for DST; the script itself is idempotent so extra runs are harmless -
+    # it just finds "no new draws" and exits quietly).
+    - cron: '0 6-22 * * *'
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write   # needed so the workflow can commit the updated JSON back
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright --break-system-packages
+          playwright install --with-deps chromium
+
+      - name: Run scraper and update data
+        run: python scripts/update_draws.py
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "chance-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data/*.json
+          git diff --staged --quiet && echo "No changes" || git commit -m "auto-update: new draw(s) fetched"
+          git push
