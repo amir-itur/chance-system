@@ -1,6 +1,18 @@
 {
   "ok": false,
-  "message": "Scrape returned zero rows - selectors likely need calibration (see script docstring).",
-  "checked_at": "2026-08-09T15:32:27.377409+00:00",
-  "extra": {}
+  "message": "Scrape returned zero rows after all extraction strategies - see debug/ artifacts.",
+  "checked_at": "2026-08-09T16:09:13.913969+00:00",
+  "extra": {
+    "log": [
+      "[2026-08-09T16:09:04.518274+00:00] opening https://www.pais.co.il/chance/archive.aspx",
+      "[2026-08-09T16:09:11.411674+00:00] page title: \"מפעל הפיס - צ'אנס | ארכיון תוצאות\"",
+      "[2026-08-09T16:09:11.467273+00:00] found search control via selector 'text=חפש' - clicking it",
+      "[2026-08-09T16:09:13.148288+00:00] found 1 <table> elements, 1 <tr> elements after settle",
+      "[2026-08-09T16:09:13.167738+00:00]   table-row scan: 1 <tr> examined, 0 parsed as draw records",
+      "[2026-08-09T16:09:13.167762+00:00] strategy A (table rows) found nothing - trying strategy B",
+      "[2026-08-09T16:09:13.175652+00:00]   text-pattern scan: 1855 tokens scanned, 0 unique draw records parsed",
+      "[2026-08-09T16:09:13.175690+00:00] strategy B (text pattern) also found nothing",
+      "[2026-08-09T16:09:13.913947+00:00] extraction result: 0 draw record(s) parsed"
+    ]
+  }
 }
