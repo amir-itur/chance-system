@@ -265,7 +265,7 @@ function getAllDraws() {
   return out;
 }
 const ALL_DRAWS = getAllDraws();
-const N_TOTAL = ALL_DRAWS.length;
+let N_TOTAL = ALL_DRAWS.length;
 
 function getRangeDraws() {
   const sel = document.getElementById('rangeSelect').value;
@@ -753,6 +753,7 @@ async function loadLiveData() {
       }
     }
     if (added > 0) {
+      N_TOTAL = ALL_DRAWS.length;
       statusBox.innerHTML = `הגרלה אחרונה עודכנה: <b>#${liveData.last_draw_id}</b> · נטען מהשרת (${added} הגרלות חדשות) · ${new Date(liveData.updated_at).toLocaleString('he-IL')}`;
       populateCardFocusSelect();
       refreshDashboard();
