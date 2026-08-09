@@ -1,10 +1,6 @@
 {
   "ok": true,
-  "message": "Added 1 new draw(s).",
-  "checked_at": "2026-08-09T20:03:33.203903+00:00",
-  "extra": {
-    "new_draw_ids": [
-      53374
-    ]
-  }
+  "message": "No new draws found (up to date).",
+  "checked_at": "2026-08-09T22:03:34.624987+00:00",
+  "extra": {}
 }
