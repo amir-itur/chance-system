@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "message": "Scrape returned zero rows - selectors likely need calibration (see script docstring).",
+  "checked_at": "2026-08-09T15:32:27.377409+00:00",
+  "extra": {}
+}
