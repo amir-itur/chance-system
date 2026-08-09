@@ -1,1 +1,456 @@
-{"draws": [], "last_draw_id": null, "updated_at": null}
+{
+  "draws": [
+    {
+      "draw_id": 53324,
+      "date": "31/07/26",
+      "time": "12:00",
+      "clubs": "A",
+      "diamonds": "9",
+      "hearts": "J",
+      "spades": "9"
+    },
+    {
+      "draw_id": 53325,
+      "date": "31/07/26",
+      "time": "14:00",
+      "clubs": "8",
+      "diamonds": "7",
+      "hearts": "K",
+      "spades": "A"
+    },
+    {
+      "draw_id": 53326,
+      "date": "01/08/26",
+      "time": "21:30",
+      "clubs": "9",
+      "diamonds": "J",
+      "hearts": "Q",
+      "spades": "A"
+    },
+    {
+      "draw_id": 53327,
+      "date": "01/08/26",
+      "time": "23:30",
+      "clubs": "8",
+      "diamonds": "A",
+      "hearts": "9",
+      "spades": "Q"
+    },
+    {
+      "draw_id": 53328,
+      "date": "02/08/26",
+      "time": "09:00",
+      "clubs": "8",
+      "diamonds": "10",
+      "hearts": "10",
+      "spades": "A"
+    },
+    {
+      "draw_id": 53329,
+      "date": "02/08/26",
+      "time": "11:00",
+      "clubs": "8",
+      "diamonds": "8",
+      "hearts": "K",
+      "spades": "7"
+    },
+    {
+      "draw_id": 53330,
+      "date": "02/08/26",
+      "time": "13:00",
+      "clubs": "7",
+      "diamonds": "9",
+      "hearts": "9",
+      "spades": "7"
+    },
+    {
+      "draw_id": 53331,
+      "date": "02/08/26",
+      "time": "15:00",
+      "clubs": "Q",
+      "diamonds": "7",
+      "hearts": "8",
+      "spades": "Q"
+    },
+    {
+      "draw_id": 53332,
+      "date": "02/08/26",
+      "time": "17:00",
+      "clubs": "10",
+      "diamonds": "K",
+      "hearts": "10",
+      "spades": "8"
+    },
+    {
+      "draw_id": 53333,
+      "date": "02/08/26",
+      "time": "19:00",
+      "clubs": "Q",
+      "diamonds": "Q",
+      "hearts": "10",
+      "spades": "A"
+    },
+    {
+      "draw_id": 53334,
+      "date": "02/08/26",
+      "time": "21:00",
+      "clubs": "K",
+      "diamonds": "J",
+      "hearts": "Q",
+      "spades": "8"
+    },
+    {
+      "draw_id": 53335,
+      "date": "03/08/26",
+      "time": "09:00",
+      "clubs": "9",
+      "diamonds": "Q",
+      "hearts": "7",
+      "spades": "J"
+    },
+    {
+      "draw_id": 53336,
+      "date": "03/08/26",
+      "time": "11:00",
+      "clubs": "Q",
+      "diamonds": "J",
+      "hearts": "J",
+      "spades": "7"
+    },
+    {
+      "draw_id": 53337,
+      "date": "03/08/26",
+      "time": "13:00",
+      "clubs": "8",
+      "diamonds": "9",
+      "hearts": "10",
+      "spades": "K"
+    },
+    {
+      "draw_id": 53338,
+      "date": "03/08/26",
+      "time": "15:00",
+      "clubs": "A",
+      "diamonds": "K",
+      "hearts": "Q",
+      "spades": "8"
+    },
+    {
+      "draw_id": 53339,
+      "date": "03/08/26",
+      "time": "17:00",
+      "clubs": "J",
+      "diamonds": "9",
+      "hearts": "K",
+      "spades": "Q"
+    },
+    {
+      "draw_id": 53340,
+      "date": "03/08/26",
+      "time": "19:00",
+      "clubs": "10",
+      "diamonds": "Q",
+      "hearts": "Q",
+      "spades": "J"
+    },
+    {
+      "draw_id": 53341,
+      "date": "03/08/26",
+      "time": "21:00",
+      "clubs": "8",
+      "diamonds": "8",
+      "hearts": "8",
+      "spades": "9"
+    },
+    {
+      "draw_id": 53342,
+      "date": "04/08/26",
+      "time": "09:00",
+      "clubs": "8",
+      "diamonds": "J",
+      "hearts": "10",
+      "spades": "10"
+    },
+    {
+      "draw_id": 53343,
+      "date": "04/08/26",
+      "time": "11:00",
+      "clubs": "7",
+      "diamonds": "7",
+      "hearts": "A",
+      "spades": "8"
+    },
+    {
+      "draw_id": 53344,
+      "date": "04/08/26",
+      "time": "13:00",
+      "clubs": "8",
+      "diamonds": "10",
+      "hearts": "8",
+      "spades": "9"
+    },
+    {
+      "draw_id": 53345,
+      "date": "04/08/26",
+      "time": "15:00",
+      "clubs": "10",
+      "diamonds": "J",
+      "hearts": "9",
+      "spades": "J"
+    },
+    {
+      "draw_id": 53346,
+      "date": "04/08/26",
+      "time": "17:00",
+      "clubs": "K",
+      "diamonds": "Q",
+      "hearts": "A",
+      "spades": "A"
+    },
+    {
+      "draw_id": 53347,
+      "date": "04/08/26",
+      "time": "19:00",
+      "clubs": "J",
+      "diamonds": "7",
+      "hearts": "J",
+      "spades": "10"
+    },
+    {
+      "draw_id": 53348,
+      "date": "04/08/26",
+      "time": "21:00",
+      "clubs": "8",
+      "diamonds": "9",
+      "hearts": "10",
+      "spades": "10"
+    },
+    {
+      "draw_id": 53349,
+      "date": "05/08/26",
+      "time": "09:00",
+      "clubs": "10",
+      "diamonds": "J",
+      "hearts": "J",
+      "spades": "8"
+    },
+    {
+      "draw_id": 53350,
+      "date": "05/08/26",
+      "time": "11:00",
+      "clubs": "J",
+      "diamonds": "7",
+      "hearts": "K",
+      "spades": "J"
+    },
+    {
+      "draw_id": 53351,
+      "date": "05/08/26",
+      "time": "13:00",
+      "clubs": "7",
+      "diamonds": "7",
+      "hearts": "A",
+      "spades": "9"
+    },
+    {
+      "draw_id": 53352,
+      "date": "05/08/26",
+      "time": "15:00",
+      "clubs": "8",
+      "diamonds": "K",
+      "hearts": "9",
+      "spades": "A"
+    },
+    {
+      "draw_id": 53353,
+      "date": "05/08/26",
+      "time": "17:00",
+      "clubs": "A",
+      "diamonds": "9",
+      "hearts": "10",
+      "spades": "J"
+    },
+    {
+      "draw_id": 53354,
+      "date": "05/08/26",
+      "time": "19:00",
+      "clubs": "Q",
+      "diamonds": "Q",
+      "hearts": "K",
+      "spades": "J"
+    },
+    {
+      "draw_id": 53355,
+      "date": "05/08/26",
+      "time": "21:00",
+      "clubs": "K",
+      "diamonds": "10",
+      "hearts": "7",
+      "spades": "9"
+    },
+    {
+      "draw_id": 53356,
+      "date": "06/08/26",
+      "time": "09:00",
+      "clubs": "Q",
+      "diamonds": "J",
+      "hearts": "Q",
+      "spades": "10"
+    },
+    {
+      "draw_id": 53357,
+      "date": "06/08/26",
+      "time": "11:00",
+      "clubs": "Q",
+      "diamonds": "A",
+      "hearts": "7",
+      "spades": "7"
+    },
+    {
+      "draw_id": 53358,
+      "date": "06/08/26",
+      "time": "13:00",
+      "clubs": "8",
+      "diamonds": "9",
+      "hearts": "9",
+      "spades": "8"
+    },
+    {
+      "draw_id": 53359,
+      "date": "06/08/26",
+      "time": "15:00",
+      "clubs": "8",
+      "diamonds": "8",
+      "hearts": "J",
+      "spades": "J"
+    },
+    {
+      "draw_id": 53360,
+      "date": "06/08/26",
+      "time": "17:00",
+      "clubs": "K",
+      "diamonds": "8",
+      "hearts": "7",
+      "spades": "Q"
+    },
+    {
+      "draw_id": 53361,
+      "date": "06/08/26",
+      "time": "19:00",
+      "clubs": "10",
+      "diamonds": "J",
+      "hearts": "Q",
+      "spades": "K"
+    },
+    {
+      "draw_id": 53362,
+      "date": "06/08/26",
+      "time": "21:00",
+      "clubs": "Q",
+      "diamonds": "9",
+      "hearts": "Q",
+      "spades": "7"
+    },
+    {
+      "draw_id": 53363,
+      "date": "07/08/26",
+      "time": "10:00",
+      "clubs": "A",
+      "diamonds": "8",
+      "hearts": "Q",
+      "spades": "K"
+    },
+    {
+      "draw_id": 53364,
+      "date": "07/08/26",
+      "time": "12:00",
+      "clubs": "A",
+      "diamonds": "10",
+      "hearts": "8",
+      "spades": "10"
+    },
+    {
+      "draw_id": 53365,
+      "date": "07/08/26",
+      "time": "14:00",
+      "clubs": "7",
+      "diamonds": "8",
+      "hearts": "10",
+      "spades": "A"
+    },
+    {
+      "draw_id": 53366,
+      "date": "08/08/26",
+      "time": "21:30",
+      "clubs": "8",
+      "diamonds": "8",
+      "hearts": "K",
+      "spades": "9"
+    },
+    {
+      "draw_id": 53367,
+      "date": "08/08/26",
+      "time": "23:30",
+      "clubs": "Q",
+      "diamonds": "K",
+      "hearts": "A",
+      "spades": "9"
+    },
+    {
+      "draw_id": 53368,
+      "date": "09/08/26",
+      "time": "09:00",
+      "clubs": "J",
+      "diamonds": "10",
+      "hearts": "J",
+      "spades": "9"
+    },
+    {
+      "draw_id": 53369,
+      "date": "09/08/26",
+      "time": "11:00",
+      "clubs": "8",
+      "diamonds": "8",
+      "hearts": "A",
+      "spades": "9"
+    },
+    {
+      "draw_id": 53370,
+      "date": "09/08/26",
+      "time": "13:00",
+      "clubs": "J",
+      "diamonds": "A",
+      "hearts": "9",
+      "spades": "A"
+    },
+    {
+      "draw_id": 53371,
+      "date": "09/08/26",
+      "time": "15:00",
+      "clubs": "9",
+      "diamonds": "7",
+      "hearts": "7",
+      "spades": "K"
+    },
+    {
+      "draw_id": 53372,
+      "date": "09/08/26",
+      "time": "17:00",
+      "clubs": "K",
+      "diamonds": "A",
+      "hearts": "Q",
+      "spades": "7"
+    },
+    {
+      "draw_id": 53373,
+      "date": "09/08/26",
+      "time": "19:00",
+      "clubs": "A",
+      "diamonds": "K",
+      "hearts": "J",
+      "spades": "J"
+    }
+  ],
+  "last_draw_id": 53373,
+  "updated_at": "2026-08-09T16:52:46.725115+00:00"
+}
