@@ -27,12 +27,29 @@ jobs:
           playwright install --with-deps chromium
 
       - name: Run scraper and update data
+        id: scrape
         run: python scripts/update_draws.py
+        continue-on-error: true   # let later steps run (commit status.json, upload debug) even if this fails
+
+      - name: Upload debug artifacts (page HTML + screenshot + log)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-${{ github.run_number }}
+          path: debug/
+          retention-days: 14
 
       - name: Commit changes if any
+        if: always()
         run: |
           git config user.name "chance-bot"
           git config user.email "actions@users.noreply.github.com"
           git add docs/data/*.json
-          git diff --staged --quiet && echo "No changes" || git commit -m "auto-update: new draw(s) fetched"
+          git diff --staged --quiet && echo "No data changes" || git commit -m "auto-update: new draw(s) fetched"
           git push
+
+      - name: Fail the run if the scrape step failed
+        if: steps.scrape.outcome == 'failure'
+        run: |
+          echo "Scrape step failed - see docs/data/status.json and the debug-${{ github.run_number }} artifact above for details."
+          exit 1
