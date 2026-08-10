@@ -512,8 +512,17 @@
       "diamonds": "A",
       "hearts": "K",
       "spades": "Q"
+    },
+    {
+      "draw_id": 53381,
+      "date": "10/08/26",
+      "time": "21:00",
+      "clubs": "Q",
+      "diamonds": "A",
+      "hearts": "9",
+      "spades": "7"
     }
   ],
-  "last_draw_id": 53380,
-  "updated_at": "2026-08-10T18:00:51.952269+00:00"
+  "last_draw_id": 53381,
+  "updated_at": "2026-08-10T20:10:59.016800+00:00"
 }
