@@ -1,11 +1,10 @@
 {
   "ok": true,
-  "message": "Added 2 new draw(s).",
-  "checked_at": "2026-08-12T16:12:41.823277+00:00",
+  "message": "Added 1 new draw(s).",
+  "checked_at": "2026-08-12T20:05:05.112752+00:00",
   "extra": {
     "new_draw_ids": [
-      53394,
-      53393
+      53395
     ]
   }
 }
