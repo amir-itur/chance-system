@@ -665,8 +665,26 @@
       "diamonds": "9",
       "hearts": "Q",
       "spades": "9"
+    },
+    {
+      "draw_id": 53398,
+      "date": "13/08/26",
+      "time": "13:00",
+      "clubs": "J",
+      "diamonds": "8",
+      "hearts": "J",
+      "spades": "A"
+    },
+    {
+      "draw_id": 53399,
+      "date": "13/08/26",
+      "time": "15:00",
+      "clubs": "9",
+      "diamonds": "A",
+      "hearts": "J",
+      "spades": "Q"
     }
   ],
-  "last_draw_id": 53397,
-  "updated_at": "2026-08-13T09:48:10.553892+00:00"
+  "last_draw_id": 53399,
+  "updated_at": "2026-08-13T12:36:36.364245+00:00"
 }
