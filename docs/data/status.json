@@ -1,11 +1,11 @@
 {
-  "ok": true,
-  "message": "Added 2 new draw(s).",
-  "checked_at": "2026-08-13T12:36:36.365158+00:00",
+  "ok": false,
+  "message": "Scrape failed: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.pais.co.il/chance/archive.aspx\", waiting until \"load\"\n",
+  "checked_at": "2026-08-13T16:13:19.517480+00:00",
   "extra": {
-    "new_draw_ids": [
-      53399,
-      53398
+    "log": [
+      "[2026-08-13T16:12:47.832880+00:00] opening https://www.pais.co.il/chance/archive.aspx",
+      "[2026-08-13T16:13:19.517462+00:00] FAILED with exception: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.pais.co.il/chance/archive.aspx\", waiting until \"load\"\n"
     ]
   }
 }
