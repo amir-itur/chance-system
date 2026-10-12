@@ -2895,6 +2895,187 @@
         "size": 0.3333333333333333,
         "parity": 0.3333333333333333
       }
+    },
+    {
+      "target_draw_id": 53722,
+      "created_at": "2026-10-12T14:18:23.733693+00:00",
+      "based_on_draws_up_to": 53721,
+      "top1": {
+        "clubs": "8",
+        "diamonds": "7",
+        "hearts": "A",
+        "spades": "8"
+      },
+      "full_ranking": {
+        "clubs": [
+          "8",
+          "10",
+          "Q",
+          "9",
+          "7",
+          "A",
+          "J",
+          "K"
+        ],
+        "diamonds": [
+          "7",
+          "9",
+          "10",
+          "K",
+          "J",
+          "8",
+          "A",
+          "Q"
+        ],
+        "hearts": [
+          "A",
+          "Q",
+          "K",
+          "J",
+          "10",
+          "8",
+          "7",
+          "9"
+        ],
+        "spades": [
+          "8",
+          "10",
+          "A",
+          "9",
+          "Q",
+          "7",
+          "K",
+          "J"
+        ]
+      },
+      "combos_20": [
+        {
+          "clubs": "8",
+          "diamonds": "7",
+          "hearts": "A",
+          "spades": "8"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "7",
+          "hearts": "A",
+          "spades": "10"
+        },
+        {
+          "clubs": "10",
+          "diamonds": "7",
+          "hearts": "A",
+          "spades": "8"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "9",
+          "hearts": "A",
+          "spades": "8"
+        },
+        {
+          "clubs": "10",
+          "diamonds": "7",
+          "hearts": "A",
+          "spades": "10"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "7",
+          "hearts": "Q",
+          "spades": "8"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "9",
+          "hearts": "A",
+          "spades": "10"
+        },
+        {
+          "clubs": "10",
+          "diamonds": "9",
+          "hearts": "A",
+          "spades": "8"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "7",
+          "hearts": "Q",
+          "spades": "10"
+        },
+        {
+          "clubs": "10",
+          "diamonds": "7",
+          "hearts": "Q",
+          "spades": "8"
+        },
+        {
+          "clubs": "10",
+          "diamonds": "9",
+          "hearts": "A",
+          "spades": "10"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "9",
+          "hearts": "Q",
+          "spades": "8"
+        },
+        {
+          "clubs": "10",
+          "diamonds": "7",
+          "hearts": "Q",
+          "spades": "10"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "7",
+          "hearts": "K",
+          "spades": "8"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "9",
+          "hearts": "Q",
+          "spades": "10"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "10",
+          "hearts": "A",
+          "spades": "8"
+        },
+        {
+          "clubs": "10",
+          "diamonds": "9",
+          "hearts": "Q",
+          "spades": "8"
+        },
+        {
+          "clubs": "Q",
+          "diamonds": "7",
+          "hearts": "A",
+          "spades": "8"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "7",
+          "hearts": "K",
+          "spades": "10"
+        },
+        {
+          "clubs": "8",
+          "diamonds": "10",
+          "hearts": "A",
+          "spades": "10"
+        }
+      ],
+      "model_version": "1.0.0-equal-weights",
+      "weights": {
+        "card": 0.3333333333333333,
+        "size": 0.3333333333333333,
+        "parity": 0.3333333333333333
+      }
     }
   ]
 }
