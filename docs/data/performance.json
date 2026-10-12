@@ -614,6 +614,47 @@
         },
         "hits": 2
       }
+    },
+    {
+      "draw_id": 53722,
+      "date": "12/10/26",
+      "snapshot_created_at": "2026-10-12T14:18:23.733693+00:00",
+      "predicted_top1": {
+        "clubs": "8",
+        "diamonds": "7",
+        "hearts": "A",
+        "spades": "8"
+      },
+      "actual": {
+        "clubs": "J",
+        "diamonds": "10",
+        "hearts": "8",
+        "spades": "J"
+      },
+      "hits_by_position": {
+        "clubs": false,
+        "diamonds": false,
+        "hearts": false,
+        "spades": false
+      },
+      "n_hits": 0,
+      "pct": 0.0,
+      "rank_of_actual": {
+        "clubs": 7,
+        "diamonds": 3,
+        "hearts": 6,
+        "spades": 8
+      },
+      "best_combo_of_20": {
+        "combo_index": 15,
+        "combo": {
+          "clubs": "8",
+          "diamonds": "10",
+          "hearts": "A",
+          "spades": "8"
+        },
+        "hits": 1
+      }
     }
   ]
 }
