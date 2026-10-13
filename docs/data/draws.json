@@ -1187,8 +1187,35 @@
       "diamonds": "A",
       "hearts": "J",
       "spades": "A"
+    },
+    {
+      "draw_id": 53728,
+      "date": "13/10/26",
+      "time": "17:00",
+      "clubs": "J",
+      "diamonds": "9",
+      "hearts": "A",
+      "spades": "Q"
+    },
+    {
+      "draw_id": 53729,
+      "date": "13/10/26",
+      "time": "19:00",
+      "clubs": "9",
+      "diamonds": "10",
+      "hearts": "J",
+      "spades": "J"
+    },
+    {
+      "draw_id": 53730,
+      "date": "13/10/26",
+      "time": "21:00",
+      "clubs": "7",
+      "diamonds": "K",
+      "hearts": "8",
+      "spades": "8"
     }
   ],
-  "last_draw_id": 53727,
-  "updated_at": "2026-10-13T13:27:51.132154+00:00"
+  "last_draw_id": 53730,
+  "updated_at": "2026-10-13T20:02:33.993040+00:00"
 }
