@@ -1,6 +1,11 @@
 {
-  "ok": true,
-  "message": "No new draws found (up to date).",
-  "checked_at": "2026-10-14T00:06:03.558105+00:00",
-  "extra": {}
+  "ok": false,
+  "message": "Scrape failed: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.pais.co.il/chance/archive.aspx\", waiting until \"load\"\n",
+  "checked_at": "2026-10-14T11:05:28.374601+00:00",
+  "extra": {
+    "log": [
+      "[2026-10-14T11:04:57.630572+00:00] opening https://www.pais.co.il/chance/archive.aspx",
+      "[2026-10-14T11:05:28.374585+00:00] FAILED with exception: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.pais.co.il/chance/archive.aspx\", waiting until \"load\"\n"
+    ]
+  }
 }
