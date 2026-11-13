@@ -1,11 +1,11 @@
 {
   "ok": false,
   "message": "Scrape failed: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.pais.co.il/chance/archive.aspx\", waiting until \"load\"\n",
-  "checked_at": "2026-11-13T02:21:43.814389+00:00",
+  "checked_at": "2026-11-13T13:51:41.715077+00:00",
   "extra": {
     "log": [
-      "[2026-11-13T02:21:13.352179+00:00] opening https://www.pais.co.il/chance/archive.aspx",
-      "[2026-11-13T02:21:43.814371+00:00] FAILED with exception: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.pais.co.il/chance/archive.aspx\", waiting until \"load\"\n"
+      "[2026-11-13T13:51:11.200894+00:00] opening https://www.pais.co.il/chance/archive.aspx",
+      "[2026-11-13T13:51:41.715062+00:00] FAILED with exception: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.pais.co.il/chance/archive.aspx\", waiting until \"load\"\n"
     ]
   }
 }
